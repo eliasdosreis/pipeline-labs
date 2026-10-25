@@ -1,43 +1,20 @@
-
-name: "Estrutura de diretorios e arquivos"
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
   workflow_dispatch:
-
-env:
-  NODE_VERSION: '18'
-
+      
 jobs:
-  demonstrando-estruturas:
-    name: "Demonstrando Estruturas Basicas"
+  exemplo:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout do Codigo"
+      - name: Checkout Código
         uses: actions/checkout@v4
 
-      - name: "Mostrar estrutura .github/workflows"
-        run: |
-          echo "Estrutura do diretorio .github/workflows:"
-          ls -R .github/workflows
-          echo ""
-          echo "Total de workflows: $(ls -1 .github/workflows | wc -l)"
+      - name: Executar Hello World
+        run: echo "Hello, World!"
 
-      - name: "Elementos Obrigatorios do Workflow"
-        run: |
-          echo "Elementos Obrigatorios do Workflow:"
-          echo "1. name: Nome do workflow"
-          echo "2. on: Evento que dispara o workflow"
-          echo "3. jobs: Conjunto de trabalhos a serem executados"
-          echo ""
-
-      - name: "Variaveis de contexto"
-        run: |
-          echo "Variaveis de contexto:"
-          echo "1. github: Informacoes sobre o repositorio e o evento"
-          echo "2. env: Variaveis de ambiente definidas no workflow"
-          echo "3. job: Informacoes sobre o trabalho atual"
-          echo "4. steps: Informacoes sobre os passos do trabalho"
-          echo ""
