@@ -18,3 +18,10 @@ jobs:
       - name: Executar Hello World
         run: echo "Hello, World!"
 
+      - name: Mostrar informaçoes do Sistema
+        run: |
+          echo "Informações do Sistema:"
+          uname -a
+          lsb_release -a
+          df -h
+          free -m
