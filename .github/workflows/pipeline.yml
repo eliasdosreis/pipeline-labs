@@ -7,7 +7,7 @@ on:
 
 
 env:
-    NODE_VERSION: '18'
+  NODE_VERSION: '18'
 
 jobs:
   demostrando-estruturas:
@@ -32,5 +32,14 @@ jobs:
             echo "1. name: Nome do workflow"
             echo "2. on: Evento que dispara o workflow"
             echo "3. jobs: Conjunto de trabalhos a serem executados"
+            echo ""
+
+        - name: Variaveis de contexto
+          run: |
+            echo "Variáveis de contexto:"
+            echo "1. github: Informações sobre o repositório e o evento"
+            echo "2. env: Variáveis de ambiente definidas no workflow"
+            echo "3. job: Informações sobre o trabalho atual"
+            echo "4. steps: Informações sobre os passos do trabalho"
             echo ""
        
